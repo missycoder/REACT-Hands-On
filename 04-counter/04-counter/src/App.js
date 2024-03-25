@@ -12,10 +12,17 @@ const NumberBox = () => {
   };
 
   return (
-    <div>
-      <div>Count: {count}</div>
-      <button onClick={increaseCount}>Increase</button>
-      <button onClick={decreaseCount}>Decrease</button>
+    <div style={{ 
+      background: 'linear-gradient(to right, #ff7e5f, #feb47b)', 
+      fontFamily: 'Verdana, sans-serif',
+      padding: '20px', 
+      borderRadius: '10px', 
+      width: '200px', 
+      textAlign: 'center' 
+    }}>
+      <div style={{ fontSize: '24px', marginBottom: '10px' }}>Count: {count}</div> 
+      <button style={{ fontSize: '18px', marginRight: '10px' }} onClick={increaseCount}>Increase</button>
+      <button style={{ fontSize: '18px' }} onClick={decreaseCount}>Decrease</button> 
     </div>
   );
 };
