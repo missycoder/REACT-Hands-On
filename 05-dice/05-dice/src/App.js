@@ -1,3 +1,6 @@
+// useState is a hook
+// a hook is a function, when called, will add
+// new functionality to a component
 import { useState } from 'react';
 
 const Dice = () => {
