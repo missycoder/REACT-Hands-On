@@ -13,8 +13,16 @@ code {
 }
 
 .form-container {
-  background: linear-gradient(to right, #ffcccc, #ccffff);
+  background: linear-gradient(to right, #ffcccc, #ccffff); 
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Apply gradient background to all forms */
+/* form {
+  background: linear-gradient(to right, #ffcccc, #ccffff); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+} */
