@@ -1,0 +1,14 @@
+[
+    {
+        "name":"10% off all drinks at Burger King",
+        "description":"Between 1st April to 14th April all drinks are 10% off"
+    },
+    {
+        "name":"1 for 1 Promotion at Hang Ten",
+        "description":"Buy 1 Colored Tee to get 1 for free!"
+    },
+    {
+        "name":"Parking Discount",
+        "description":"Spend at least $100 to get $5 discount from your parking"
+    }
+]
