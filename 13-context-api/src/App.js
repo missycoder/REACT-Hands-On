@@ -1,8 +1,9 @@
-import ProductContext from "./ProductContext.js"
-import './App.css';
-import ProductListing from "./ProductListing.js";
+import React, { useState } from "react";
+import ProductContext from "./ProductContext";
+import ProductListing from "./ProductListing";
 
 function App() {
+
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -22,17 +23,18 @@ function App() {
   ])
 
   const context = {
-    getProducts: () => { return products; }
-      addProduct: (productName, cost) => {
-      let id = Math.floor(Math.random() * 1000000
-          setProducts([...products, {
+    getProducts: () => { return products; },
+    addProduct: (productName, cost) => {
+      let id = Math.floor(Math.random() * 1000000);
+      setProducts([...products, {
         id: id,
         product_name: productName,
         cost: cost
-      }])
+      }]
       )
     }
   }
+
 
   return (
     <ProductContext.Provider value={context}>
