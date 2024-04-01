@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+// when sending -> use `useNavigate`
 import { useNavigate } from "react-router-dom";
 
 export default function ContactUs() {
 
-    // State
+    // State Hook
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
 
-    // navigate
+    // navigate Hook
     const navigate = useNavigate();
 
     function submitForm() {

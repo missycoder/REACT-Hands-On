@@ -1,4 +1,5 @@
 import React from 'react';
+// when receiving -> use `useLocation`
 import { useLocation } from 'react-router-dom';
 
 export default function SubmittedForm() {
@@ -10,8 +11,8 @@ export default function SubmittedForm() {
     return (
         <React.Fragment>
             <h1>Thank you for contacting us</h1>
-            <p>{fullName}</p>
-            <p>You have registered with {email}</p>
+            <p>Your name: {fullName}</p>
+            <p>Y Your email: {email}</p>
         </React.Fragment>
     )
 }
