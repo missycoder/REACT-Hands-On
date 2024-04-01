@@ -1,37 +1,66 @@
-import React, { useState, createContext } from 'react';
+import React, {useState, createContext, useMemo} from "react";
 
 export const ProductContext = createContext();
 
-// We export ProductContext as the handshake for a component that will use the useContext() hook. It will look like this: useContext(ProductContext). I will demo how to useContext later.
-
-export default function ProductContextData(props) {
-
-    //In this function, we construct the context value we pass on.
+export default function ProductContextData (props){
 
     const [products, setProducts] = useState([
-        { id: 1, product_name: 'ACME Anvils', cost: 9.99 },
-        { id: 2, product_name: 'ACME Hammer', cost: 15.5 },
-        { id: 3, product_name: 'ACME Screwdriver', cost: 12.5 },
-    ]);
-
+        {
+            id: 1,
+            product_name: "ACME Anvils",
+            cost: 9.99
+        },
+        {
+            id: 2,
+            product_name: "ACME Hammers",
+            cost: 19.99
+        },
+        {
+            id: 3,
+            product_name: "ACME Screwdrivers",
+            cost: 29.99
+        }
+      ])
+  
     const addProduct = (newProductName, cost) => {
-
-        let id = Math.floor(Math.random() * 10000 + 9999)
+        let id = Math.floor(Math.random() * 1000000);
 
         const productsWithNewAdded = [...products, {
             id: id,
             product_name: newProductName,
             cost: cost
-        }
-        ]
-
+          }]
         setProducts(productsWithNewAdded);
     }
 
-    const context = {
-        products: products,
-        addProduct: addProduct
+    function getProductByID(productParams){
+        const foundProduct = products.filter((p)=> p.id === parseInt(productParams));
+        return foundProduct;
     }
+
+    const context = useMemo(() => {
+        return {
+          products: products,
+          getProductByID: (productId) => {
+            console.log("type check here", typeof(productId))
+            return products.filter((p) => p.id === parseInt(productId));
+
+},
+addProduct: (productName, cost) => {
+  setProducts([
+    ...products,
+    {
+      id: Math.floor(Math.random() * 100000),
+      product_name: productName,
+      cost: cost,
+    },
+  ]);
+},
+};
+}, [products]);
+
+
+
 
     return (
         <ProductContext.Provider value={context}>
@@ -40,10 +69,12 @@ export default function ProductContextData(props) {
     )
 }
 
-// alternative, instead of (props), you can destructure it 
-// like this:
-// export default function ProductContextData({children}). 
-// Then in 
-// <ProductContextProvider>
-{ children }
-// </ProductContext.Provider>
+
+
+
+  
+
+
+
+
+
