@@ -15,6 +15,7 @@ export default function ContactUs() {
 
         navigate('/form-submitted',
             {
+                // pass object with a name called `state`
                 state: {
                     "fullName": fullName,
                     "email": email
