@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// when sending -> use `useNavigate`
+// when sending / navigation-throws -> use `useNavigate`
 import { useNavigate } from "react-router-dom";
 
 export default function ContactUs() {
